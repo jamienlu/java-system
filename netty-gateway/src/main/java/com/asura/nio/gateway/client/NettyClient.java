@@ -30,9 +30,11 @@ public class NettyClient {
             });
             ChannelFuture f = b.connect(host, port).sync();
             HttpRequest request = new DefaultHttpRequest(HttpVersion.HTTP_1_1, HttpMethod.GET, "https://www.baidu.com/");
-            f.channel().write(request);
+            // f.channel().write(request);
+             f.channel().write("test");
             f.channel().flush();
             f.channel().closeFuture().sync();
+            // f.channel().close();
         } finally {
             workerGroup.shutdownGracefully();
         }

@@ -22,9 +22,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acaa1bb1-0bd5-4f03-b7b7-4516a990db19" name="Default Changelist" comment="">
+    <list default="true" id="acaa1bb1-0bd5-4f03-b7b7-4516a990db19" name="Default Changelist" comment="week4concurrent">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/asura/concurrent/thread/多线程图.xmind" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../netty-gateway/.idea/netty-gateway.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../netty-gateway/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/asura/concurrent/thread/多线程.xmind" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../netty-gateway/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../netty-gateway/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../netty-gateway/src/main/java/com/asura/nio/gateway/client/NettyClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../netty-gateway/src/main/java/com/asura/nio/gateway/client/NettyClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../netty-gateway/target/classes/com/asura/nio/gateway/client/NettyClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/../netty-gateway/target/classes/com/asura/nio/gateway/client/NettyClient.class" afterDir="false" />
@@ -66,8 +69,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/asura/concurrent/thread" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\project\javecource\concurrent\src\main\java\com\asura\concurrent\thread" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.ThreadWork2">
     <configuration name="ThreadWork2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -112,6 +120,14 @@
       <option name="presentableId" value="Default" />
       <updated>1634061488739</updated>
     </task>
+    <task id="LOCAL-00001" summary="week4concurrent">
+      <created>1634222101034</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1634222101034</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -125,6 +141,11 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="week3concurrent" />
+    <MESSAGE value="week4concurrent" />
+    <option name="LAST_COMMIT_MESSAGE" value="week4concurrent" />
   </component>
   <component name="WindowStateProjectService">
     <state x="705" y="320" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1634198659225">

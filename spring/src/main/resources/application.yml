@@ -1,8 +1,0 @@
-spring:
-  profiles:
-    active: agent
-com:
-  asura:
-    agent:
-      classprex: com.
-      methodprex: select

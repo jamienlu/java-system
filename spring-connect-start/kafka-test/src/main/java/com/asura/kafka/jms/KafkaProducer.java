@@ -18,12 +18,9 @@ import java.util.Map;
 public class KafkaProducer {
     @Autowired
     private KafkaTemplate<String, Object> kafkaTemplate;
-    @Autowired
-    public Map<String,String> kafkaTopics;
 
     public void produce(String topicName, Object obj) {
-        String topic = StringUtil.isNullOrEmpty(topicName) || StringUtil.isNullOrEmpty(kafkaTopics.get(topicName))
-            ? KafkaConfig.TOPIC_TEST : kafkaTopics.get(topicName);
+        String topic = StringUtil.isNullOrEmpty(topicName) ? KafkaConfig.TOPIC_TEST : topicName;
         log.info("准备发送的主题为:{}", topic);
         String obj2String = JSONObject.toJSONString(obj);
         log.info("准备发送消息为:{}", obj2String);

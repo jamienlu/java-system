@@ -16,17 +16,9 @@ import java.util.Optional;
 @Component
 @Slf4j
 public class KafkaConsumer {
-    @Autowired
-    public Map<String,String> kafkaTopics;
-
-    public final String[] topicNames = new String[]{};
-
-    public KafkaConsumer() {
-    }
 
     @KafkaListener(topics = {KafkaConfig.TOPIC_TEST}, groupId = KafkaConfig.TOPIC_GROUP)
     public void topic_test(ConsumerRecord<?, ?> record, Acknowledgment ack, @Header(KafkaHeaders.RECEIVED_TOPIC) String topic) {
-
         Optional message = Optional.ofNullable(record.value());
         if (message.isPresent()) {
             Object msg = message.get();
@@ -35,12 +27,12 @@ public class KafkaConsumer {
         }
     }
 
-    @KafkaListener(topics = KafkaConfig.TOPICS, groupId = KafkaConfig.TOPIC_GROUPS)
+    @KafkaListener(id = "consumer-topics", topics = "#{'${kafkamq.topics}'.split(',')}")
     public void topics_test(ConsumerRecord<?, ?> record, Acknowledgment ack, @Header(KafkaHeaders.RECEIVED_TOPIC) String topic) {
         Optional message = Optional.ofNullable(record.value());
         if (message.isPresent()) {
             Object msg = message.get();
-            log.info("topic_test1 消费了： Topic:" + topic + ",Message:" + msg);
+            log.info("topics_test 消费了： Topic:" + topic + ",Message:" + msg);
             ack.acknowledge();
         }
     }

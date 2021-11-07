@@ -2,11 +2,16 @@ package com.asura.javcourse.jvm;
 
 import java.io.*;
 import java.lang.reflect.InvocationTargetException;
+import java.net.URISyntaxException;
 import java.util.Arrays;
+import java.util.zip.ZipFile;
 
 public class JVMClassLoaderDemo extends ClassLoader {
-    public static void main(String[] args) {
-        InputStream inputStream = JVMClassLoaderDemo.class.getClassLoader().getResourceAsStream("Hello.xlass");
+    public static void main(String[] args) throws URISyntaxException, IOException {
+        File xFile = new File(JVMClassLoaderDemo.class.getClassLoader().getResource("Hello.xar").toURI());
+        ZipFile zipFile = new ZipFile(xFile);
+        InputStream inputStream = zipFile.getInputStream(zipFile.getEntry("Hello.xlass"));
+        //InputStream inputStream = JVMClassLoaderDemo.class.getClassLoader().getResourceAsStream("Hello.xlass");
         JVMClassLoaderDemo loaderDemo = new JVMClassLoaderDemo();
         Class<?> clazz = loaderDemo.findClass(inputStream,"Hello");
         Arrays.stream(clazz.getDeclaredMethods()).forEach(method -> {

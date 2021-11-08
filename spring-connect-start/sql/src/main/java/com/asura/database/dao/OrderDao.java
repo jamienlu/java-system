@@ -10,27 +10,34 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 @Component
 @Slf4j
 public class OrderDao {
     @Autowired
-    private MultiRouteDataSource dataSource;
+    private MultiRouteDataSource multiDataSource;
 
     @DataSourceBeanName
-    public void insert() {
+    public void insert() throws SQLException {
         String sql = "insert into asura_category(name,parent_id,is_parent,sort) values('家用电器','-1',true,0)";
-        new JdbcTemplate(dataSource).update(sql);
+        PreparedStatement preparedStatement = multiDataSource.getConnection().prepareStatement(sql);
+        int resrult = preparedStatement.executeUpdate();
     }
 
     @DataSourceBeanName("slave1")
-    public void read1() {
+    public void read1() throws SQLException {
         String sql = "select count(1) from asura_category";
-        log.info("read1:" + new JdbcTemplate(dataSource).queryForList(sql));
+        int result = new JdbcTemplate(multiDataSource).queryForObject(sql, Integer.class);
+        log.info("read1:" + result);
     }
 
     @DataSourceBeanName("slave2")
-    public void read2() {
+    public void read2() throws SQLException {
         String sql = "select count(1) from asura_category";
-        log.info("read2:" + new JdbcTemplate(dataSource).queryForObject(sql, Integer.class));
+        int result = new JdbcTemplate(multiDataSource).queryForObject(sql, Integer.class);
+        log.info("read2:" + result);
     }
 }

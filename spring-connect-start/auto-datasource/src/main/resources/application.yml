@@ -25,24 +25,16 @@ spring:
                 password: 123456
                 type: com.alibaba.druid.pool.DruidDataSource
                 driver-class-name: com.mysql.cj.jdbc.Driver
-            rules:
-                readwrite-splitting:
-                    load-balancers:
-                        masterbalancer:
-                            type: ROUND_ROBIN
-                    data-sources:
-                        master:
-                            write-data-source-name: master
-                            read-data-source-names: slave2,slave3
-                            load-balancer-name: masterbalancer
-                        slave2:
-                            write-data-source-name: master
-                            read-data-source-names: slave2,slave3
-                            load-balancer-name: masterbalancer
-                        slave3:
-                            write-data-source-name: master
-                            read-data-source-names: slave2,slave3
-                            load-balancer-name: masterbalancer
+        rules:
+            readwrite-splitting:
+                load-balancers:
+                    masterbalancer:
+                        type: ROUND_ROBIN
+                data-sources:
+                    master:
+                        write-data-source-name: master
+                        read-data-source-names: master,slave2,slave3
+                        load-balancer-name: masterbalancer
         props:
             sql:
                 # 显示sql，默认为false

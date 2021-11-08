@@ -13,6 +13,7 @@
         <module>starter</module>
         <module>spring-test</module>
         <module>jdbc</module>
+        <module>driud-src-test</module>
     </modules>
 
     <parent>

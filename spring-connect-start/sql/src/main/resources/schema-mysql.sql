@@ -116,3 +116,12 @@ CREATE TABLE IF NOT EXISTS `asura_spu`  (
   `last_update_time` datetime(0) NULL DEFAULT NULL COMMENT '最后修改时间',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COMMENT = 'spu表，描述的是一个抽象性的商品' ROW_FORMAT = Dynamic;
+
+
+CREATE TABLE IF NOT EXISTS `asura_demo`  (
+    `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+    `name` varchar(20)  NOT NULL COMMENT 'name',
+    `create_time` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
+    `update_time` datetime(0) NULL DEFAULT NULL COMMENT '最后更新时间',
+    PRIMARY KEY (`id`) USING BTREE
+    ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COMMENT = 'demo';

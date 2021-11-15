@@ -1,6 +1,7 @@
-package com.asura.shradingspheretest;
+package com.asura.xa;
 
-import com.asura.shradingspheretest.dao.OrderDao;
+import com.asura.xa.service.OrderService;
+import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,15 +11,17 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class Work1Test {
+public class WorkTest {
     @Autowired
-    private OrderDao orderDao;
+    private OrderService orderService;
 
     @Test
-    /**
-     * 一句一句插入大约100min
-     */
     public void addOrder() {
-        orderDao.insertTest();
+        orderService.insert();
+    }
+
+    @After
+    public void claerOrder() {
+        orderService.clear();
     }
 }

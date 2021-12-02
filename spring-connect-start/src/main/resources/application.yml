@@ -8,25 +8,11 @@ spring:
         #存储的数据库账号
         username: root
         #存储的数据库账号
-        password: hello_123456789
+        password: 123456
         #存储的数据库地址 localhost 为ip地址 3306为数据库端口 tianailu为数据库库名
         url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
-        initialization-mode: always
-        separator: ;
-        platform: mysql
-        #初始化的表
-        schema: classpath:schema-mysql.sql
-        #执行schema脚本的数据库密码
-        schema-password: hello_123456789
-        #执行schema脚本的数据库账号
-        schema-username: root
-    data:
-        mongodb:
-            host: 127.0.0.1
-            port: 27017
-            database: test
     cache:
         type: redis
 

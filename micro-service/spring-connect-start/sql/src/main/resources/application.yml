@@ -1,0 +1,50 @@
+server:
+    #部署的端口号
+    port: 8088
+    servlet:
+        context-path: /
+spring:
+    data:
+        mongodb:
+            host: 127.0.0.1
+            port: 27017
+            database: test
+    cache:
+        type: redis
+
+datasource:
+    master:
+        url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&rewriteBatchedStatements=true&useSSL=true&serverTimezone=UTC
+        username: root
+        password: 123456
+        type: com.alibaba.druid.pool.DruidDataSource
+        driverClassName: com.mysql.cj.jdbc.Driver
+    slave1:
+        url: jdbc:mysql://localhost:3326/test?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&rewriteBatchedStatements=true&useSSL=true&serverTimezone=UTC
+        username: root
+        password: 123456
+        type: com.alibaba.druid.pool.DruidDataSource
+        driverClassName: com.mysql.cj.jdbc.Driver
+    slave2:
+        url: jdbc:mysql://localhost:3336/test?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&rewriteBatchedStatements=true&useSSL=true&serverTimezone=UTC
+        username: root
+        password: 123456
+        type: com.alibaba.druid.pool.DruidDataSource
+        driverClassName: com.mysql.cj.jdbc.Driver
+
+redis:
+    cache:
+        database: 0
+    session:
+        database: 1
+    host: 127.0.0.1
+    port: 6379
+    password: redis_123456789
+    timeout: 2000
+    lettuce:
+        pool:
+            max-active: 8
+            max-wait: 5000
+            max-idle: 4
+            min-idle: 0
+        shutdown-timeout: 5000

@@ -1,0 +1,11 @@
+server:
+  port: 3601
+
+rocketmq:
+  name-server: 127.0.0.1:9876
+  producer:
+    group: rocket_pro_test
+  consumer:
+    group: rocket_csm_test
+    pullBatchSize: 10
+  topic: topic_test

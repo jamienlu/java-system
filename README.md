@@ -16,9 +16,7 @@ sudo apt-get install libcups2-dev
 sudo apt-get install libfontconfig1-dev
 sudo apt-get install libasound2-dev
 ```
-
-https://uploader.shimo.im/f/sAUAg88e5RHzqfyd.png?sm_xform=image%2Fauto-orient%2C1![image](https://github.com/user-attachments/assets/8145fbfd-4b4e-4abb-9dc0-166d972de366)
-
+![image](https://github.com/user-attachments/assets/a99fd406-fe9d-4da9-bc9b-20bf974bf5aa)
 
 ```plain
 make compile-commands
